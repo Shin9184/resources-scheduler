@@ -1,0 +1,122 @@
+/* 기본 body 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* 헤더 스타일 */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#title {
+    font-family: arial;
+    font-size: 2em;
+    color: #eb971a;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#lambda-line {
+    width: 800px;
+    height: 2px;
+    background-color: #eb971a;
+    border: none;
+    margin: 0 auto;
+}
+
+/* 메뉴 스타일 */
+.menu-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.menu-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #eb971a;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin: 0 10px;
+    transition: all 0.3s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    width: 120px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.menu-button:hover {
+    background-color: #d87b0a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 8px rgba(0,0,0,0.15);
+}
+
+.menu-button.active {
+    background-color: #d87b0a;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 로그아웃 버튼 스타일 */
+#logout-button {
+    position: absolute;
+    bottom: 10px;
+    right: calc((100% - 800px) / 2 + 20px);
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+
+#logout-button:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 850px) {
+    #lambda-line {
+        width: 95%;
+    }
+
+    .menu-button {
+        width: 110px;
+        padding: 10px 20px;
+    }
+
+    #logout-button {
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #title {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    .menu-button {
+        width: 100px;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    #logout-button {
+        right: 10px;
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+}

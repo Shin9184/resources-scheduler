@@ -1,0 +1,110 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-table, .conversion-table {
+    border: 2px solid #eb971a;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    width: 400px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.time-table h3, .conversion-table h3 {
+    color: #eb971a;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.time-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.time-label {
+    font-weight: bold;
+    color: #666;
+    font-size: 1.1em;
+}
+
+.time-value {
+    color: #333;
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
+.conversion-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1em;
+}
+
+.conversion-table th {
+    background-color: #fff4e6;
+    color: #eb971a;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #eb971a;
+}
+
+.conversion-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.conversion-table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+/* 스크롤바 스타일링 */
+.conversion-table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.conversion-table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.conversion-table-container::-webkit-scrollbar-thumb {
+    background: #eb971a;
+    border-radius: 4px;
+}
+
+.conversion-table-container::-webkit-scrollbar-thumb:hover {
+    background: #d87b0a;
+}
+
+@media screen and (max-width: 850px) {
+    .container {
+        width: 95%;
+    }
+
+    .time-table, .conversion-table {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .time-table, .conversion-table {
+        padding: 15px;
+    }
+
+    .conversion-table table {
+        font-size: 0.9em;
+    }
+}

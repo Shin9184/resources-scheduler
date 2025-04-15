@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<html lang="en" style="display: none;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <script src="js/auth.js" ></script>
+  
+  <script src="js/login.js" defer></script>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+  <main id="main-holder">
+    <h1 id="login-header">Resources Scheduler</h1>
+    <div class="logo-container">
+        <img src="images/clock.png" alt="Goodrich Logo" class="login-logo">
+    </div>
+        
+    <div id="login-error-msg-holder">
+      <p id="login-error-msg">Invalid id <span id="error-msg-second-line">and/or password</span></p>
+    </div>
+    
+    <form id="login-form" autocomplete="off">
+      <input type="text" name="id" id="id-field" class="login-form-field" placeholder="id" autocomplete="off">
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="password" autocomplete="off">
+      <input type="submit" value="Login" id="login-form-submit">
+    </form>
+  
+  </main>
+</body>
+
+</html>

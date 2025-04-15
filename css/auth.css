@@ -1,0 +1,4 @@
+/* 인증 완료 전까지 숨김 */
+.hidden {
+    display: none;
+}

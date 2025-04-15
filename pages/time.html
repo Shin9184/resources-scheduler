@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+    <title>Time Conversion Table - Resources Scheduler</title>
+
+    <script src="/js/auth.js"></script>
+
+    <script src="/js/time.js" defer></script>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/time.css">
+    <link rel="stylesheet" href="/css/auth.css">
+
+</head>
+<body class="hidden">
+    <div class="header">
+        <p id="title">Resources <b>Scheduler</b></p>
+        <button id="logout-button">Logout</button>
+        <hr id="lambda-line">
+    </div>
+    
+    <div class="menu-bar">
+        <a href="main" class="menu-button">메인</a>
+        <a href="time" class="menu-button active">시간 변환표</a>
+        <a href="guide" class="menu-button">가이드</a>
+    </div>
+
+    <div class="container">
+        <div class="time-table">
+            <h3>현재 시간</h3>
+            <div class="time-row">
+                <span class="time-label">UTC</span>
+                <span class="time-value" id="utc-time"></span>
+            </div>
+            <div class="time-row">
+                <span class="time-label">KST</span>
+                <span class="time-value" id="kst-time"></span>
+            </div>
+        </div>
+
+        <div class="conversion-table">
+            <h3>UTC to KST Time Conversion Table</h3>
+            <div class="conversion-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>UTC Time</th>
+                            <th>KST Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>00:00</td><td>09:00</td></tr>
+                        <tr><td>01:00</td><td>10:00</td></tr>
+                        <tr><td>02:00</td><td>11:00</td></tr>
+                        <tr><td>03:00</td><td>12:00</td></tr>
+                        <tr><td>04:00</td><td>13:00</td></tr>
+                        <tr><td>05:00</td><td>14:00</td></tr>
+                        <tr><td>06:00</td><td>15:00</td></tr>
+                        <tr><td>07:00</td><td>16:00</td></tr>
+                        <tr><td>08:00</td><td>17:00</td></tr>
+                        <tr><td>09:00</td><td>18:00</td></tr>
+                        <tr><td>10:00</td><td>19:00</td></tr>
+                        <tr><td>11:00</td><td>20:00</td></tr>
+                        <tr><td>12:00</td><td>21:00</td></tr>
+                        <tr><td>13:00</td><td>22:00</td></tr>
+                        <tr><td>14:00</td><td>23:00</td></tr>
+                        <tr><td>15:00</td><td>00:00</td></tr>
+                        <tr><td>16:00</td><td>01:00</td></tr>
+                        <tr><td>17:00</td><td>02:00</td></tr>
+                        <tr><td>18:00</td><td>03:00</td></tr>
+                        <tr><td>19:00</td><td>04:00</td></tr>
+                        <tr><td>20:00</td><td>05:00</td></tr>
+                        <tr><td>21:00</td><td>06:00</td></tr>
+                        <tr><td>22:00</td><td>07:00</td></tr>
+                        <tr><td>23:00</td><td>08:00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="/js/logout.js"></script>
+
+</body>
+</html>

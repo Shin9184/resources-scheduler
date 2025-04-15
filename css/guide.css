@@ -1,0 +1,78 @@
+.guide-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.guide-title {
+    color: #eb971a;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.guide-section {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.guide-section h3 {
+    color: #eb971a;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.guide-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.guide-image {
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.guide-text {
+    flex: 1;
+}
+
+.guide-text p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 850px) {
+    .guide-content {
+        flex-direction: column;
+    }
+
+    .guide-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .guide-container {
+        padding: 0 15px;
+    }
+
+    .guide-section {
+        padding: 20px;
+    }
+
+    .guide-title {
+        font-size: 1.5em;
+    }
+
+    .guide-section h3 {
+        font-size: 1.2em;
+    }
+}
