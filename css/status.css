@@ -1,0 +1,237 @@
+.status-center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+    width: 800px;
+    margin: 30px auto 0;
+}
+
+.status-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.status-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.refresh-button {
+    position: absolute;
+    right: 0;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.refresh-button:hover {
+    background-color: #45a049;
+}
+
+.refresh-img {
+    width: 20px;
+    height: 20px;
+}
+
+.status-header h3 {
+    margin: 0; 
+    font-size: 1.3em;
+    color: #eb971a;
+    text-align: center;
+}
+
+.status-table {
+    width: 600px;
+    border: 2px solid #eb971a;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.status-table h3 {
+    color: #eb971a;
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+#status-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+#status-container th {
+    background-color: #fff4e6;
+    color: #eb971a;
+    padding: 10px;
+    border-bottom: 2px solid #eb971a;
+}
+
+#status-container td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+#status-container {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* 로딩 관련 스타일 */
+.loading-container {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+/* 로딩 애니메이션 */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 에러 메시지 스타일 */
+.error-message {
+    color: #e74c3c;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #fdeaea;
+    margin: 1rem 0;
+}
+
+/* 검색 기능 관련 스타일 */
+.search-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.search-input {
+    width: 100%;
+    height: 35px;
+    padding: 0 15px;
+    font-size: 14px;
+    border: 2px solid #eb971a;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #d87b0a;
+    box-shadow: 0 0 5px rgba(235, 151, 26, 0.3);
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+/* 스크롤바 스타일링 */
+#status-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#status-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#status-container::-webkit-scrollbar-thumb {
+    background: #eb971a;
+    border-radius: 4px;
+}
+
+#status-container::-webkit-scrollbar-thumb:hover {
+    background: #d87b0a;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 850px) {
+    .status-center {
+        width: 95%;
+    }
+
+    .status-table {
+        width: 90%;
+    }
+
+    .search-container {
+        width: 90%;
+        padding: 0 10px;
+    }
+
+    #status-container table {
+        font-size: 0.95em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .status-table {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .search-container {
+        padding: 0 5px;
+    }
+
+    .search-input {
+        font-size: 13px;
+        height: 32px;
+    }
+
+    #status-container table {
+        font-size: 0.85em;
+    }
+
+    #status-container th,
+    #status-container td {
+        padding: 8px 5px;
+    }
+
+    .refresh-button {
+        padding: 4px;
+    }
+
+    .refresh-img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .status-header h3 {
+        font-size: 1.1em;
+    }
+}
