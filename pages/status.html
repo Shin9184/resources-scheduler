@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+    <title>Resources Scheduler</title>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/status.js"></script>
+
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/status.css">
+
+</head>
+<body class="hidden" onload="statusbox();">
+    <div class="header">
+        <p id="title">Resources <b>Scheduler</b></p>
+        <button id="logout-button">Logout</button>
+        <hr id="lambda-line">
+    </div>
+    
+    <div class="menu-bar">
+        <a href="main" class="menu-button">메인</a>
+        <a href="time" class="menu-button">시간 변환표</a>
+        <a href="guide" class="menu-button">가이드</a>
+        <a href="status" class="menu-button active">현황</a>
+    </div>
+
+    <div class="status-center">
+        <div class="status-content">
+            <div class="status-table">
+                <div class="status-header">
+                    <h3>활성화된 Scheduler 목록</strong></h3>
+                    <button class="refresh-button" onclick="statusbox();">
+                        <img src="../images/refresh.png" alt="refresh" class="refresh-img" />
+                    </button>
+                </div>
+                <div id="status-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/logout.js"></script>
+</body>
+</html>
