@@ -23,6 +23,7 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 - 리소스 스케줄링 관리
   - EC2/RDS 인스턴스 중지 일정 등록 및 수정
   - EC2/RDS 인스턴스 즉시 시작
+  - Eventbridge 현황 확인
 - 사용자 인증
   - JWT 기반 토큰 인증
   - 자동 로그아웃 (토큰 만료)
@@ -90,6 +91,8 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 ## 📁 프로젝트 구조
 ```tree
 .
+├── cloudfront-function/          # cloudfront 관련 함수
+│   └── time.css                  # 뷰어 요청용 함수
 ├── css/                          # 스타일시트 파일
 │   ├── auth.css                  # 인증 관련 스타일
 │   ├── common.css                # 공통 스타일
@@ -97,12 +100,14 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 │   ├── guide.css                 # 가이드 페이지 스타일
 │   ├── login.css                 # 로그인 페이지 스타일
 │   ├── main.css                  # 메인 페이지 스타일
+│   ├── status.css                # 현황 페이지 스타일
 │   └── time.css                  # UTC 및 KST 시간 관련 스타일
 │
 ├── images/                       # 이미지 리소스
 │   ├── clock.png                 # 시계 이미지
 │   ├── env-select.svg            # 환경 선택 아이콘
 │   ├── login.PNG                 # 로그인 페이지 이미지
+│   ├── refresh.png               # 현황 재시도 버튼 이미지
 │   ├── runcat.gif                # 애니메이션 이미지
 │   ├── scheduler-1.PNG           # 스케줄러 스크린샷 1
 │   ├── scheduler-2.PNG           # 스케줄러 스크린샷 2
@@ -113,6 +118,7 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 │   ├── login.js                  # 로그인 기능
 │   ├── logout.js                 # 로그아웃 기능
 │   ├── main.js                   # 스케줄링 기능
+│   ├── status.js                 # 스케줄링 현황 기능
 │   └── time.js                   # UTC/KST 시간 관리
 │
 ├── pages/                        # HTML 페이지
@@ -124,9 +130,9 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 │   ├── lambda-api.py             # 스케줄링 처리
 │   ├── lambda-auth.py            # 인증 처리
 │   ├── lambda-startscheduler.py  # 리소스 시작
+│   ├── lambda-status.py          # Eventbridge 현황
 │   └── lambda-stopscheduler.py   # 리소스 중지
 │
-├── cloudfront-function.js        # CloudFront 뷰어 요청 처리
 ├── error.html                    # 에러 페이지
 └── index.html                    # 로그인 페이지
 ```
