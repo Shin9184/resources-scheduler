@@ -4,6 +4,7 @@
 - [프로젝트 소개](#-프로젝트-소개)
 - [기능 소개](#-기능-소개)
 - [시스템 아키텍처](#-시스템-아키텍처)
+- [결과 화면](#-결과-화면)
 - [기술 스택](#-기술-스택)
 - [프로젝트 구조](#-프로젝트-구조)
 - [기술적 경험](#-기술적-경험)
@@ -40,7 +41,7 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 3. 시간이 지난 토큰이라면 로그아웃처리를 하고, 시간이 유효한 토큰이라면 요청을 처리
 
 ## 🏗 시스템 아키텍처
-![시스템 아키텍처](images/scheduler-architecture.png)
+![시스템 아키텍처](readme_images/scheduler-architecture.png)
 **CloudFront, S3, Lambda, DynamoDB, API Gateway** 를 활용한 **서버리스 아키텍처**로 구성되었습니다. 이를 통해 **서버 관리에 대한 부담을 줄이고**, 사용량 기반 과금 구조를 활용함으로써 **비용 효율성을 극대화**할 수 있었습니다.  
 특히, 상시 운영이 필요한 서버 인프라 없이도 필요한 시점에만 리소스를 동적으로 활용할 수 있어 **소규모 트래픽부터 일정 규모의 요청까지 유연하게 대응 가능**하며, 초기 인프라 구축 및 유지 비용을 최소화할 수 있다는 점에서 큰 이점을 갖습니다.
 
@@ -73,6 +74,42 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 	- CloudFront CDN을 통한 글로벌 서비스 제공
 	- API Gateway를 통한 안정적인 API 관리
 	- DynamoDB의 높은 가용성 활용
+
+## 🙌 결과 화면
+**로그인**
+![scheduler_login](readme_images/scheduler_login.png)
+최초 접근 시 나오는 로그인 페이지에서 DynamoDB에 저장된 ID, Password로 로그인 합니다.
+
+**메인**
+![scheduler_main](readme_images/scheduler_main.png)
+메인 페이지에서 리소스 스케줄링을 적용할 수 있습니다.
+
+**시간 변환표**
+![scheduler_timetable](readme_images/scheduler_timetable.png)
+UTC 시간에 익숙하지 않은 사용자도 표를 통해 이해할 수 있도록 적용했습니다.
+
+**리소스 스케줄링(중지 시간 조정)**
+![scheduler_stop_action](readme_images/scheduler_stop_action.png)
+![scheduler_stop_result1](readme_images/scheduler_stop_result1.png)
+![scheduler_stop_result2](readme_images/scheduler_stop_result2.png)
+Scheduler 대상 추가 시 EC2 & RDS 의 Tag 기반의 Eventbridge 이벤트 시간을 조정할 수 있도록 했습니다.
+
+**리소스 스케줄링(리소스 시작)**
+![scheduler_start_action](readme_images/scheduler_start_action.png)
+![scheduler_start_action_running](readme_images/scheduler_start_action_running.png)
+![scheduler_start_result1](readme_images/scheduler_start_result1.png)
+![scheduler_start_result2](readme_images/scheduler_start_result2.png)
+Scheduler 대상 기동 시 EC2 & RDS 의 Tag 기반의 리소스를 기동할 수 있도록 했습니다.
+
+**리소스 스케줄링 현황**
+![scheduler-situation1](readme_images/scheduler-situation1.png)
+![scheduler-situation2](readme_images/scheduler-situation2.png)
+스케줄 조정 이후, 각 서비스의 현황을 조건에 맞게 필터링하여 확인할 수 있습니다.
+
+**리소스 스케줄링 사용자 경험 개선**
+![scheduler_error_page](readme_images/scheduler_error_page.png)
+![scheduler_remove_extension](readme_images/scheduler_remove_extension.png)
+없는 페이지나 임의적으로 접근 시 에러페이지를 통한 메인으로 접근하며, 확장자를 제거하여 깔끔한 URL처리와 보안성 향상 시켰습니다.
 
 ## 🛠 기술 스택
 ### Frontend
