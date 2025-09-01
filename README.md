@@ -83,7 +83,7 @@ API로 사용 시 `token`이 없다면 통신이 실패합니다.
 
 ### 🔧 배포 시 주의사항
 - **Lambda 환경 변수 설정**: `JWT_SECRET` 환경 변수를 Lambda 함수에 설정해야 합니다.
-- **Dependencies 설치**: `requirements.txt`에 정의된 Python 패키지들을 Lambda 레이어 또는 배포 패키지에 포함해야 합니다.
+- **Dependencies 설치**: `requirements.txt`에 정의된 Python 패키지를 Lambda 레이어 또는 배포 패키지에 포함해야 합니다. (PyJWT)
 - **토큰 테이블 설정**: DynamoDB의 토큰 테이블에 적절한 TTL 설정이 필요합니다.
 
 ### 특장점
