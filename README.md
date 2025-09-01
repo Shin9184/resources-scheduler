@@ -28,6 +28,7 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 - 사용자 인증
   - JWT 기반 토큰 인증
   - 자동 로그아웃 (토큰 만료)
+  - API 엔드포인트 보안 강화 (모든 API 요청에 인증 검증 적용)
 
 ### 인증 및 요청 처리 흐름
 **Client (Frontend)**
@@ -39,6 +40,13 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 1. 로그인 시 토큰을 발급하여 dynamoDB 에 저장하고 클라이언트단에서는 쿠키에 토큰을 저장
 2. 클라이언트에서 받은 모든 요청은 토큰을 확인
 3. 시간이 지난 토큰이라면 로그아웃처리를 하고, 시간이 유효한 토큰이라면 요청을 처리
+4. 모든 API 엔드포인트에서 JWT 토큰 검증을 수행하여 인증되지 않은 요청 차단
+
+### 🔒 보안 강화 사항
+- **API 엔드포인트 보안**: 모든 API 요청(`/api/start`, `/api/stop`, `/api/status`)에 JWT 토큰 검증 로직 추가
+- **Postman 등 외부 도구 차단**: 인증 없이 API를 직접 호출하는 것을 방지
+- **토큰 기반 인증**: 쿠키 기반 JWT 토큰으로 사용자 세션 관리
+- **자동 로그아웃**: 토큰 만료 시 자동으로 로그인 페이지로 리다이렉트
 
 ## 🏗 시스템 아키텍처
 ![시스템 아키텍처](readme_images/scheduler-architecture.png)
@@ -64,6 +72,11 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 		- 파티션 키 : id
 	- token Talbe 의 컬럼은 token, created_at, expires_at(TTL), id
 		- 파티션 키 : token
+
+### 🔧 배포 시 주의사항
+- **Lambda 환경 변수 설정**: `JWT_SECRET` 환경 변수를 Lambda 함수에 설정해야 합니다.
+- **Dependencies 설치**: `requirements.txt`에 정의된 Python 패키지들을 Lambda 레이어 또는 배포 패키지에 포함해야 합니다.
+- **토큰 테이블 설정**: DynamoDB의 토큰 테이블에 적절한 TTL 설정이 필요합니다.
 
 ### 특장점
 - **서버리스 아키텍처** 채택
