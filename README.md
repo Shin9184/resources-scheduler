@@ -42,11 +42,19 @@ AWS Amazon Elastic Compute Cloud(Amazon EC2) 및 Amazon Relational Database Serv
 3. 시간이 지난 토큰이라면 로그아웃처리를 하고, 시간이 유효한 토큰이라면 요청을 처리
 4. 모든 API 엔드포인트에서 JWT 토큰 검증을 수행하여 인증되지 않은 요청 차단
 
-### 🔒 보안 강화 사항
+### 보안 강화 사항
 - **API 엔드포인트 보안**: 모든 API 요청(`/api/start`, `/api/stop`, `/api/status`)에 JWT 토큰 검증 로직 추가
 - **Postman 등 외부 도구 차단**: 인증 없이 API를 직접 호출하는 것을 방지
 - **토큰 기반 인증**: 쿠키 기반 JWT 토큰으로 사용자 세션 관리
 - **자동 로그아웃**: 토큰 만료 시 자동으로 로그인 페이지로 리다이렉트
+
+**실패 예시**
+API로 사용 시 `token`이 없다면 통신이 실패합니다.
+![API 통신 실패](readme_images/scheduler-api-failed.png)
+
+**성공 예시**
+만약, 로그인 후 발급받은 토큰을 헤더에 추가 후 통신 시 정상적인 통신이 가능합니다.
+![API 통신 성공](readme_images/scheduler-api-success.png)
 
 ## 🏗 시스템 아키텍처
 ![시스템 아키텍처](readme_images/scheduler-architecture.png)
